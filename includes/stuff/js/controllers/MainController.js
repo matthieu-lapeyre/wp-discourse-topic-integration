@@ -1,8 +1,10 @@
 app.controller('MainController', ['$scope', 'discourse', function($scope, discourse) {
-  discourse.success(function(data) {
-    $scope.raw = data;
-    $scope.project_name = data.title
-    $scope.author = data.details.created_by.username
-    $scope.topic_content = data.post_stream.posts[0].cooked
-  });
+  $scope.data = null;
+  discourse.getData(function(dataResponse) {
+        $scope.raw = dataResponse;
+        $scope.project_name = dataResponse.title
+        $scope.author = dataResponse.details.created_by.username
+        $scope.topic_content = dataResponse.post_stream.posts[0].cooked
+    });
+
 }]);

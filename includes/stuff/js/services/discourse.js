@@ -1,11 +1,16 @@
-app.factory('discourse', ['$http', function($http) {
-  return $http.get('wp-content/plugins/discourse-topic-integration/includes/stuff/post.json')
-  .success(function(data) {
-    return data;
-    })
-  .error(function(err) {
-    return err;
-    });
-}]);
-
-// wp-content/plugins/discourse-topic-integration/includes/stuff/post.json
+app.service('discourse', function($http) {
+  delete $http.defaults.headers.common['X-Requested-With'];
+  this.getData = function(callbackFunc) {
+      $http({
+          method: 'GET',
+          url: 'wp-content/plugins/discourse-topic-integration/includes/stuff/post.json',
+          params: 'limit=10, sort_by=created:desc',
+          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+       }).success(function(data){
+          // With the data succesfully returned, call our callback
+          callbackFunc(data);
+      }).error(function(){
+          alert("error while trying to fetch data");
+      });
+   }
+});
