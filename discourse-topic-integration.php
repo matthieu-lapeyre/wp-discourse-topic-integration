@@ -3,11 +3,11 @@
  * Plugin Name: Discourse Topic Integration
  * Version: 1.0
  * Plugin URI: http://www.hughlashbrooke.com/
- * Description: This is your starter template for your next WordPress plugin.
- * Author: Hugh Lashbrooke
- * Author URI: http://www.hughlashbrooke.com/
+ * Description: Integrate Discourse topic into wordpress posts or pages
+ * Author: Matthieu Lapeyre
+ * Author URI: http://www.github.com/matthieu-lapeyre
  * Requires at least: 4.0
- * Tested up to: 4.0
+ * Tested up to: 4.2
  *
  * Text Domain: discourse-topic-integration
  * Domain Path: /lang/
@@ -22,6 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Load plugin class files
 require_once( 'includes/class-discourse-topic-integration.php' );
 require_once( 'includes/class-discourse-topic-integration-settings.php' );
+require_once( 'includes/discourse-topic-integration-shortcode.php' );
+require_once( 'includes/discourse-topic-integration-custom-scripts.php' );
 
 // Load plugin libraries
 require_once( 'includes/lib/class-discourse-topic-integration-admin-api.php' );
@@ -43,5 +45,7 @@ function Discourse_Topic_Integration () {
 
 	return $instance;
 }
+
+
 
 Discourse_Topic_Integration();
