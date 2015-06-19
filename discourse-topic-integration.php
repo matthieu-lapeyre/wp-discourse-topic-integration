@@ -22,14 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Load plugin class files
 require_once( 'includes/class-discourse-topic-integration.php' );
 require_once( 'includes/class-discourse-topic-integration-settings.php' );
-require_once( 'includes/discourse-topic-integration-shortcode.php' );
-require_once( 'includes/discourse-topic-integration-custom-scripts.php' );
 
 // Load plugin libraries
 require_once( 'includes/lib/class-discourse-topic-integration-admin-api.php' );
-require_once( 'includes/lib/class-discourse-topic-integration-post-type.php' );
-require_once( 'includes/lib/class-discourse-topic-integration-taxonomy.php' );
 
+require_once( 'includes/discourse-topic-integration-shortcode.php' );
 /**
  * Returns the main instance of Discourse_Topic_Integration to prevent the need to use globals.
  *
