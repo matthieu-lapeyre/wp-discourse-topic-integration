@@ -18,7 +18,7 @@ Once activated, it provides a simple wordpress shortcode:
 [discourse topic_id='xxx']
 ```
 
-which generate simple HTML code:
+which generates simple HTML code:
 
 ```
 <h1> {Title} </h1>
@@ -31,7 +31,7 @@ which generate simple HTML code:
 
 ## Installation
 
-Installing "Discourse Topic Integration" can be done either by searching for "Discourse Topic Integration" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
+Installing "Discourse Topic Integration" can be done either by using the following steps:
 
 1. [Download](archive/master.zip) this plugin
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard
@@ -43,9 +43,8 @@ Installing "Discourse Topic Integration" can be done either by searching for "Di
 
 
 
+## Changelog
 
-== Changelog ==
-
-= 0.1 =
+### 0.1
 * 2015-06-19
 * Initial release
