@@ -39,7 +39,7 @@ class Discourse_Topic_Integration_Settings {
 	public function __construct ( $parent ) {
 		$this->parent = $parent;
 
-		$this->base = 'wpt_';
+		$this->base = 'dti_';
 
 		// Initialise settings
 		add_action( 'init', array( $this, 'init_settings' ), 11 );
@@ -67,7 +67,7 @@ class Discourse_Topic_Integration_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		$page = add_options_page( __( 'Plugin Settings', 'discourse-topic-integration' ) , __( 'Plugin Settings', 'discourse-topic-integration' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
+		$page = add_options_page( __( 'Discourse Topic Integration', 'discourse-topic-integration' ) , __( 'Discourse Topic Integration', 'discourse-topic-integration' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
 
@@ -112,12 +112,12 @@ class Discourse_Topic_Integration_Settings {
 			'description'			=> __( 'These are fairly standard form input fields.', 'discourse-topic-integration' ),
 			'fields'				=> array(
 				array(
-					'id' 			=> 'text_field',
-					'label'			=> __( 'Some Text' , 'discourse-topic-integration' ),
-					'description'	=> __( 'This is a standard text field.', 'discourse-topic-integration' ),
-					'type'			=> 'text',
+					'id' 			=> 'discourse_base_url',
+					'label'			=> __( 'Discourse base url' , 'discourse-topic-integration' ),
+					'description'	=> __( 'Provide the url of your discourse instance.', 'discourse-topic-integration' ),
+					'type'			=> 'url',
 					'default'		=> '',
-					'placeholder'	=> __( 'Placeholder text', 'discourse-topic-integration' )
+					'placeholder'	=> __( 'meta.discourse.org', 'discourse-topic-integration' )
 				),
 				array(
 					'id' 			=> 'password_field',
@@ -278,7 +278,7 @@ class Discourse_Topic_Integration_Settings {
 
 		// Build page HTML
 		$html = '<div class="wrap" id="' . $this->parent->_token . '_settings">' . "\n";
-			$html .= '<h2>' . __( 'Plugin Settings' , 'discourse-topic-integration' ) . '</h2>' . "\n";
+			$html .= '<h2>' . __( 'Discourse Topic Integration' , 'discourse-topic-integration' ) . '</h2>' . "\n";
 
 			$tab = '';
 			if ( isset( $_GET['tab'] ) && $_GET['tab'] ) {
