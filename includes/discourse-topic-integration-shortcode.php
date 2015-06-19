@@ -17,15 +17,7 @@ function integrate_discourse_topic( $atts, $content = null ) {
     $get_raw_content = $parsed_json['post_stream']['posts'][0]['cooked'];
     $get_topic_url =  $parsed_json['post_stream']['posts'][0]['cooked'];
 
-    $relative_image_path = 'src="/uploads';
-    $absolute_image_path = 'src="'.$discourse_base_url.'/uploads';
-
-    $content = str_replace($relative_image_path, $absolute_image_path, $get_raw_content, $count);
-
-    $file = fopen("users.txt", "a+");
-    file_put_contents("users.txt", $content);
-    fclose($file);
-
+    $content = add_base_url_to_link($get_raw_content, $discourse_base_url);
 
     $title = $parsed_json['title'];
     $author = $parsed_json['details']['created_by']['username'];
@@ -35,8 +27,26 @@ function integrate_discourse_topic( $atts, $content = null ) {
     echo '<h1>'.$title.'</h1>';
     echo '<h2>'.$author.'</h2>';
     echo $content;
-    echo '<a href="'.$topic_url.'"> <button> Go to the discussion</button> </a>';
+    echo '<hr/><a href="'.$topic_url.'"> <button> Go to the discussion</button> </a>';
 
+}
+
+
+function add_base_url_to_link($cooked, $base_url){
+
+  $relative_image_path = 'src="/uploads';
+  $absolute_image_path = 'src="'.$base_url.'/uploads';
+  $new_content = str_replace($relative_image_path, $absolute_image_path, $cooked, $count);
+
+  $relative_user_avatar_path = 'src="/user_avatar';
+  $absolute_user_avatar_path = 'src="'.$base_url.'/user_avatar';
+  $new_content = str_replace($relative_user_avatar_path, $absolute_user_avatar_path, $new_content, $count);
+
+  $relative_user_path = 'href="/users';
+  $absolute_user_path = 'href="'.$base_url.'/users';
+  $new_content = str_replace($relative_user_path, $absolute_user_path, $new_content, $count);
+
+  return $new_content;
 }
 
 ?>
