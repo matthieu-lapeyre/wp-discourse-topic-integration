@@ -1,8 +1,8 @@
 <?php
 /*
  * Plugin Name: Discourse Topic Integration
- * Version: 1.0
- * Plugin URI: http://www.hughlashbrooke.com/
+ * Version: 0.1
+ * Plugin URI: https://github.com/matthieu-lapeyre/wp-discourse-topic-integration
  * Description: Integrate Discourse topic into wordpress posts or pages
  * Author: Matthieu Lapeyre
  * Author URI: http://www.github.com/matthieu-lapeyre
@@ -30,11 +30,11 @@ require_once( 'includes/discourse-topic-integration-shortcode.php' );
 /**
  * Returns the main instance of Discourse_Topic_Integration to prevent the need to use globals.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @return object Discourse_Topic_Integration
  */
 function Discourse_Topic_Integration () {
-	$instance = Discourse_Topic_Integration::instance( __FILE__, '1.0.0' );
+	$instance = Discourse_Topic_Integration::instance( __FILE__, '0.1' );
 
 	if ( is_null( $instance->settings ) ) {
 		$instance->settings = Discourse_Topic_Integration_Settings::instance( $instance );
