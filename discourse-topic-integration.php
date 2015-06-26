@@ -33,16 +33,25 @@ require_once( 'includes/discourse-topic-integration-shortcode.php' );
  * @since  0.1.0
  * @return object Discourse_Topic_Integration
  */
-function Discourse_Topic_Integration () {
-	$instance = Discourse_Topic_Integration::instance( __FILE__, '0.1' );
 
-	if ( is_null( $instance->settings ) ) {
-		$instance->settings = Discourse_Topic_Integration_Settings::instance( $instance );
-	}
 
-	return $instance;
+function discourse_add_custom_css() { ?>
+    <style type="text/css" media="screen">
+		<?php echo get_option('dti_discourse_custom_css'); ?>
+    </style>
+<?php
 }
+add_action('wp_head', 'discourse_add_custom_css');
 
 
+function Discourse_Topic_Integration () {
+  $instance = Discourse_Topic_Integration::instance( __FILE__, '0.1' );
+
+  if ( is_null( $instance->settings ) ) {
+    $instance->settings = Discourse_Topic_Integration_Settings::instance( $instance );
+  }
+
+  return $instance;
+}
 
 Discourse_Topic_Integration();

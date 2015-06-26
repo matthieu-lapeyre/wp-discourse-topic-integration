@@ -22,12 +22,12 @@ function integrate_discourse_topic( $atts, $content = null ) {
     $title = $parsed_json['title'];
     $author = $parsed_json['details']['created_by']['username'];
 
-
-
+    echo '<div class="discourse-topic-integration">';
     echo '<h1>'.$title.'</h1>';
     echo '<h2>'.$author.'</h2>';
     echo $content;
     echo '<hr/><a href="'.$topic_url.'"> <button> Go to the discussion</button> </a>';
+    echo '</div>';
 
 }
 

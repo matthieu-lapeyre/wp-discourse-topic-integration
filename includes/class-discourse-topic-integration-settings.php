@@ -99,8 +99,17 @@ class Discourse_Topic_Integration_Settings {
 					'label'			=> __( 'Discourse base url' , 'discourse-topic-integration' ),
 					'description'	=> __( 'Provide the url of your discourse instance.', 'discourse-topic-integration' ),
 					'type'			=> 'text',
-					'default'		=> '',
+					'default'		=> 'http://meta.discourse.org',
 					'placeholder'	=> __( 'http://meta.discourse.org', 'discourse-topic-integration' )
+				),
+				array(
+					'id' 			=> 'discourse_custom_css',
+					'label'			=> __( 'Discourse plugin custom CSS' , 'discourse-topic-integration' ),
+					'description'	=> __( 'Provide a custom CSS for the discourse topic integration', 'discourse-topic-integration' ),
+					'type'			=> 'textarea',
+					'default'		=> '/* Enter custom CSS
+					 							 */',
+					'placeholder'	=> __( '', 'discourse-topic-integration' )
 				),
 			)
 		);
