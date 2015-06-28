@@ -15,7 +15,7 @@ This plugin allows you embedding the first post of any [Discourse forum](www.dis
 
 Once activated, it provides a simple wordpress shortcode:
 ```
-[discourse topic_id='xxx']
+[discourse topic_id="xxx" type="subject/full/reverse-full"]
 ```
 
 which generates simple HTML code:
