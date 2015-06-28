@@ -45,6 +45,9 @@ Installing "Discourse Topic Integration" can be done either by using the followi
 
 ## Changelog
 
+### 0.2
+* Add support for custom CSS
+
 ### 0.1
 * 2015-06-19
 * Initial release

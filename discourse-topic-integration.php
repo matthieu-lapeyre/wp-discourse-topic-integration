@@ -1,12 +1,12 @@
 <?php
 /*
  * Plugin Name: Discourse Topic Integration
- * Version: 0.1
+ * Version: 0.2
  * Plugin URI: https://github.com/matthieu-lapeyre/wp-discourse-topic-integration
  * Description: Integrate Discourse topic into wordpress posts or pages
  * Author: Matthieu Lapeyre
  * Author URI: http://www.github.com/matthieu-lapeyre
- * Requires at least: 4.0
+ * Requires at least: 3.0
  * Tested up to: 4.2
  *
  * Text Domain: discourse-topic-integration
@@ -45,7 +45,7 @@ add_action('wp_head', 'discourse_add_custom_css');
 
 
 function Discourse_Topic_Integration () {
-  $instance = Discourse_Topic_Integration::instance( __FILE__, '0.1' );
+  $instance = Discourse_Topic_Integration::instance( __FILE__, '0.2' );
 
   if ( is_null( $instance->settings ) ) {
     $instance->settings = Discourse_Topic_Integration_Settings::instance( $instance );
