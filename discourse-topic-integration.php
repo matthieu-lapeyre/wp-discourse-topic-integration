@@ -40,7 +40,13 @@ function discourse_add_custom_css() { ?>
 		<?php echo get_option('dti_discourse_custom_css'); ?>
     </style>
 <?php
+    wp_register_style( 'discourse-style', plugins_url('includes/style/discourse-integration.css', __FILE__), array(), null);
+    wp_enqueue_style( 'discourse-style' );
+
 }
+// wp_register_script( 'discourse-app', plugins_url( '/stuff/js/app.js', __FILE__ ) );
+
+
 add_action('wp_head', 'discourse_add_custom_css');
 
 
