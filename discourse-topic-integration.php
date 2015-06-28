@@ -26,7 +26,7 @@ require_once( 'includes/class-discourse-topic-integration-settings.php' );
 // Load plugin libraries
 require_once( 'includes/lib/class-discourse-topic-integration-admin-api.php' );
 
-require_once( 'includes/discourse-topic-integration-shortcode.php' );
+require_once( 'discourse-topic-integration-shortcode.php' );
 /**
  * Returns the main instance of Discourse_Topic_Integration to prevent the need to use globals.
  *
