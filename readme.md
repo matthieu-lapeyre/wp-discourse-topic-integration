@@ -45,6 +45,11 @@ Installing "Discourse Topic Integration" can be done either by using the followi
 
 ## Changelog
 
+### 0.3
+* Center images by default
+* Add templates
+* add new option to embed full topic in order or reverse order
+
 ### 0.2
 * Add support for custom CSS
 
