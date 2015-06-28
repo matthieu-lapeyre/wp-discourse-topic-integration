@@ -1,3 +1,8 @@
-.meta {
+.discourse-topic-integration .meta {
   display: none;
+}
+
+.discourse-topic-integration img {
+display: block;
+margin: 0 auto;
 }
