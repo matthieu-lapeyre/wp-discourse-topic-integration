@@ -30,8 +30,10 @@ function integrate_discourse_topic( $atts, $content = null ) {
     } elseif ($a['type'] == 'reverse-full') {
       $all_posts = array_reverse($topic_data['post_stream']['posts']);
       $template_url = 'templates/full_topic.php';
+    } elseif ($a['type'] == 'author-info') {
+      $template_url = 'templates/author_info.php';
     } else {
-        echo 'wrong type it should be either "subject", "full" or "reverse-full"';
+        echo 'wrong type it should be either "subject", "author-info" "full" or "reverse-full"';
     }
 
     require_once($template_url);
