@@ -3,7 +3,7 @@ Contributors: Matthieu Lapeyre, hlashbrooke
 Tags: discourse, wordpress, plugin
 Requires at least: 3.9
 Tested up to: 4.0
-Stable tag: 0.1
+Stable tag: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ This plugin allows you embedding the first post of any [Discourse forum](www.dis
 
 Once activated, it provides a simple wordpress shortcode:
 ```
-[discourse topic_id="xxx" type="subject/full/reverse-full"]
+[discourse topic_id="xxx" type="subject/full/reverse-full/author-info"]
 ```
 
 which generates simple HTML code:
@@ -44,6 +44,9 @@ Installing "Discourse Topic Integration" can be done either by using the followi
 
 
 ## Changelog
+
+### 0.4
+* add author-info template
 
 ### 0.3
 * Center images by default
