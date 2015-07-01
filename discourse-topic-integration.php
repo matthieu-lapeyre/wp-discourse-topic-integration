@@ -3,6 +3,7 @@
  * Plugin Name: Discourse Topic Integration
  * Version: 0.4
  * Plugin URI: https://github.com/matthieu-lapeyre/wp-discourse-topic-integration
+ * GitHub Plugin URI: https://github.com/matthieu-lapeyre/wp-discourse-topic-integration
  * Description: Integrate Discourse topic into wordpress posts or pages
  * Author: Matthieu Lapeyre
  * Author URI: http://www.github.com/matthieu-lapeyre
