@@ -45,7 +45,7 @@ Installing "Discourse Topic Integration" can be done either by using the followi
 
 ## Changelog
 
-### 0.4
+### 0.4.1
 * add author-info template
 
 ### 0.3
