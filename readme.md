@@ -45,7 +45,10 @@ Installing "Discourse Topic Integration" can be done either by using the followi
 
 ## Changelog
 
-### 0.4.1
+#### 0.5
+* Add support for Github Updater WP plugin
+
+### 0.4
 * add author-info template
 
 ### 0.3
